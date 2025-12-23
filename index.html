@@ -27,10 +27,10 @@
     <header class="site-header">
         <nav class="container nav-flex" aria-label="Main Navigation">
             <div class="logo-container">
-    <img src="logo.png" alt="Draevolith Logo" class="nav-icon">
-    <span class="logo-text">DRAEVOLITH</span>
-</div>
-            <div class="logo">DRAEVOLITH</div>
+                <img src="logo.png" alt="Draevolith Logo" class="nav-icon">
+                <span class="logo-text">DRAEVOLITH</span>
+            </div>
+
             <ul class="nav-links">
                 <li><a href="#myth">The Myth</a></li>
                 <li><a href="#legend">The Legend</a></li>
@@ -97,7 +97,6 @@
 
     <script>
         const glow = document.getElementById('lantern-glow');
-        // Optimized mouse tracker to center the glow on the cursor
         document.addEventListener('mousemove', (e) => {
             window.requestAnimationFrame(() => {
                 glow.style.transform = `translate(${e.clientX - 250}px, ${e.clientY - 250}px)`;
@@ -106,4 +105,3 @@
     </script>
 </body>
 </html>
-
