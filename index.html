@@ -5,24 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Draevolith | Greek God of the First Light</title>
     
+    <meta name="description" content="Explore the myth of Draevolith, the primordial Greek God of the First Light.">
     <link rel="icon" type="image/png" href="logo.png">
-    
-    <link rel="stylesheet" href="style.css">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Fauna+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <div id="lantern-glow" aria-hidden="true"></div>
 
     <header class="site-header">
-        <nav class="container nav-flex">
-            <div class="logo-container">
-                <img src="logo.png" alt="D" class="nav-icon">
+        <nav class="container nav-flex" aria-label="Main Navigation">
+            <a href="#" class="logo-container">
+                <img src="logo.png" alt="Draevolith Logo" class="nav-icon">
                 <span class="logo-text">DRAEVOLITH</span>
-            </div>
+            </a>
 
             <ul class="nav-links">
                 <li><a href="#myth">The Myth</a></li>
@@ -34,16 +34,16 @@
 
     <main>
         <section class="hero flex-center">
-            <div class="hero-content">
-                <h1 class="fade-in">Legend of the First Light</h1>
-                <p>Light is most brilliant when it emerges from darkness.</p>
+            <div class="hero__content">
+                <h1 class="hero__title fade-in">Legend of the First Light</h1>
+                <p class="hero__subtitle">Light is most brilliant when it emerges from darkness.</p>
                 <a href="#myth" class="btn">Enter the Archive</a>
             </div>
         </section>
 
         <section id="myth" class="content-section container reveal">
             <h2 class="section-title">The Primordial Paradox</h2>
-            <div class="glass-panel">
+            <div class="glass-panel text-center">
                 <p>Born of <strong>Nyx (Night)</strong> and <strong>Aether (Light)</strong>, Draevolith is the primordial Greek God of the First Light. He is the bridge between the unknown and the understood.</p>
             </div>
         </section>
@@ -56,12 +56,14 @@
                 </article>
                 
                 <div class="flex-center">
-                    <img src="LyranOblivion.jpeg" class="origin-orb" alt="The cosmic birth">
+                    <div class="orb-wrapper">
+                        <img src="LyranOblivion.jpeg" class="origin-orb" alt="A cosmic orb representing the birth of light">
+                    </div>
                 </div>
                 
                 <article class="glass-panel">
                     <h3>Gift of Aether</h3>
-                    <p>From the searing radiance, he was given the spark to ignite curiosity.</p>
+                    <p>From the searing radiance, he was given the spark to ignite curiosity and illumination.</p>
                 </article>
             </div>
         </section>
@@ -70,14 +72,23 @@
             <h2 class="section-title">The Seekers & The Lost</h2>
             <div class="grid-layout">
                 <article class="card glass-panel">
-                    <img src="LyranOblivion.jpeg" alt="Lyra" class="char-img-fixed">
-                    <h3>Lyra</h3>
-                    <p>The Apprentice Mapmaker. Chosen to carry the Flame into the future.</p>
+                    <figure>
+                        <img src="LyranOblivion.jpeg" alt="Lyra, the apprentice mapmaker" class="char-img-fixed">
+                        <figcaption>
+                            <h3>Lyra</h3>
+                            <p>The Apprentice Mapmaker. Chosen to carry the Flame into the future.</p>
+                        </figcaption>
+                    </figure>
                 </article>
+
                 <article class="card glass-panel">
-                    <img src="LyranOblivion.jpeg" alt="Oblivion" class="char-img-fixed oblivion-style">
-                    <h3>Oblivion</h3>
-                    <p>The Faceless Void. A force of static silence that feeds on memories.</p>
+                    <figure>
+                        <img src="LyranOblivion.jpeg" alt="Oblivion, the faceless void" class="char-img-fixed oblivion-style">
+                        <figcaption>
+                            <h3>Oblivion</h3>
+                            <p>The Faceless Void. A force of static silence that feeds on memories.</p>
+                        </figcaption>
+                    </figure>
                 </article>
             </div>
         </section>
@@ -85,30 +96,49 @@
 
     <footer class="site-footer">
         <div class="container">
-            <p>&copy; 2025 Draevolith Studios. All Rights Reserved.</p>
+            <p>&copy; 2025 Draevolith Studios. Crafted in the First Light.</p>
         </div>
     </footer>
 
     <script>
-        // Scroll Animation (Intersection Observer)
-        const observerOptions = { threshold: 0.15 };
-        const observer = new IntersectionObserver((entries) => {
+        /**
+         * ANIMATION: Intersection Observer for Scroll Reveals
+         */
+        const revealCallback = (entries, observer) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('active');
+                    // Stop observing once triggered to save resources
+                    observer.unobserve(entry.target);
                 }
             });
-        }, observerOptions);
+        };
 
-        document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
-
-        // Lantern Glow Follower
-        const glow = document.getElementById('lantern-glow');
-        document.addEventListener('mousemove', (e) => {
-            window.requestAnimationFrame(() => {
-                glow.style.transform = `translate(${e.clientX - 250}px, ${e.clientY - 250}px)`;
-            });
+        const revealObserver = new IntersectionObserver(revealCallback, { 
+            threshold: 0.15 
         });
+
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+        /**
+         * INTERACTIVE: High-Performance Lantern Glow
+         */
+        const glow = document.getElementById('lantern-glow');
+        
+        // Use translate3d for GPU acceleration (smoother 60fps)
+        const updateLantern = (e) => {
+            const x = e.clientX - 250;
+            const y = e.clientY - 250;
+            
+            window.requestAnimationFrame(() => {
+                glow.style.transform = `translate3d(${x}px, ${y}px, 0)`;
+            });
+        };
+
+        // Only run on non-touch devices for better mobile experience
+        if (window.matchMedia("(pointer: fine)").matches) {
+            document.addEventListener('mousemove', updateLantern);
+        }
     </script>
 </body>
 </html>
