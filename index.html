@@ -3,15 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Draevolith | Greek God of the First Light</title>
+    <title>Draevolith | Legend of the First Light</title>
     
-    <meta name="description" content="Explore the myth of Draevolith, the primordial Greek God of the First Light.">
-    <link rel="icon" type="image/png" href="logo.png">
+    <meta name="description" content="Official Archive for Draevolith: Legend of the First Light. Explore the myth of the Guardian of Knowledge.">
+    <meta property="og:title" content="Draevolith | Legend of the First Light">
+    <meta property="og:description" content="Explore the myth of the Guardian of Knowledge born of Night and Light.">
+    
+    <link rel="stylesheet" href="style.css">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Fauna+One&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -19,126 +21,136 @@
 
     <header class="site-header">
         <nav class="container nav-flex" aria-label="Main Navigation">
-            <a href="#" class="logo-container">
-                <img src="logo.png" alt="Draevolith Logo" class="nav-icon">
-                <span class="logo-text">DRAEVOLITH</span>
-            </a>
-
+            <div class="logo">DRAEVOLITH</div>
             <ul class="nav-links">
                 <li><a href="#myth">The Myth</a></li>
                 <li><a href="#legend">The Legend</a></li>
+                <li><a href="#symbols">Symbols</a></li>
                 <li><a href="#characters">Characters</a></li>
+                <li><a href="#trailer">Trailer</a></li>
+                <li><a href="#creator">The Architect</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section class="hero flex-center">
-            <div class="hero__content">
-                <h1 class="hero__title fade-in">Legend of the First Light</h1>
-                <p class="hero__subtitle">Light is most brilliant when it emerges from darkness.</p>
+        <section class="hero flex-center" aria-labelledby="hero-title">
+            <div class="hero-content">
+                <h1 id="hero-title" class="fade-in">Legend of the First Light</h1>
+                <p>Light is most brilliant when it emerges from darkness.</p>
                 <a href="#myth" class="btn">Enter the Archive</a>
             </div>
         </section>
 
-        <section id="myth" class="content-section container reveal">
-            <h2 class="section-title">The Primordial Paradox</h2>
-            <div class="glass-panel text-center">
-                <p>Born of <strong>Nyx (Night)</strong> and <strong>Aether (Light)</strong>, Draevolith is the primordial Greek God of the First Light. He is the bridge between the unknown and the understood.</p>
-            </div>
+        <section id="myth" class="content-section container" aria-labelledby="myth-title">
+            <h2 id="myth-title" class="section-title">The Primordial Paradox</h2>
+            <p class="description">
+                Born of <strong>Nyx (Night)</strong> and <strong>Aether (Light)</strong>, Draevolith is the bridge between the unknown and the understood. 
+                He does not destroy the darkness; he illuminates the path through it.
+            </p>
         </section>
 
-        <section id="legend" class="content-section reveal">
-            <div class="container split-grid">
-                <article class="glass-panel">
+        <section id="legend" class="content-section alternate-bg">
+            <div class="container split-container">
+                <article class="side night glass-panel card">
                     <h3>Born of Nyx</h3>
-                    <p>From the eternal silence, he inherited the power to see what is hidden in the deep.</p>
+                    <p>From the eternal silence and the velvet void, Draevolith inherited the power to see what is hidden in the deep.</p>
                 </article>
                 
-                <div class="flex-center">
-                    <div class="orb-wrapper">
-                        <img src="LyranOblivion.jpeg" class="origin-orb" alt="A cosmic orb representing the birth of light">
-                    </div>
+                <div class="center-icon flex-center">
+                    <img src="hero-bg.jpg" class="origin-orb" alt="A glowing cosmic orb representing the birth of Draevolith" loading="lazy">
                 </div>
                 
-                <article class="glass-panel">
+                <article class="side light glass-panel card">
                     <h3>Gift of Aether</h3>
-                    <p>From the searing radiance, he was given the spark to ignite curiosity and illumination.</p>
+                    <p>From the searing radiance and the upper air, he was given the spark to ignite the curiosity of all mankind.</p>
                 </article>
             </div>
         </section>
 
-        <section id="characters" class="content-section container reveal">
-            <h2 class="section-title">The Seekers & The Lost</h2>
+        <section id="symbols" class="content-section container" aria-labelledby="symbols-title">
+            <h2 id="symbols-title" class="section-title">The Tools of Truth</h2>
+            <div class="grid-layout">
+                <div class="card glass-panel">
+                    <span class="symbol-icon" aria-hidden="true">🖋️</span>
+                    <h3>The Radiant Quill</h3>
+                    <p>The power to record history and rewrite a stolen destiny.</p>
+                </div>
+                <div class="card glass-panel">
+                    <span class="symbol-icon" aria-hidden="true">🏮</span>
+                    <h3>The Glowing Lantern</h3>
+                    <p>A beacon of wisdom for those wandering the grey void.</p>
+                </div>
+                <div class="card glass-panel">
+                    <span class="symbol-icon" aria-hidden="true">🦉</span>
+                    <h3>The Great Owl</h3>
+                    <p>The silent observer who witnesses the truths spoken in shadow.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="characters" class="content-section container" aria-labelledby="char-title">
+            <h2 id="char-title" class="section-title">The Seekers & The Lost</h2>
             <div class="grid-layout">
                 <article class="card glass-panel">
-                    <figure>
-                        <img src="LyranOblivion.jpeg" alt="Lyra, the apprentice mapmaker" class="char-img-fixed">
-                        <figcaption>
-                            <h3>Lyra</h3>
-                            <p>The Apprentice Mapmaker. Chosen to carry the Flame into the future.</p>
-                        </figcaption>
-                    </figure>
+                    <div class="char-img lyra-placeholder" role="img" aria-label="Portrait of Lyra"></div>
+                    <h3>Lyra</h3>
+                    <p>The Apprentice Mapmaker. Chosen to carry the Flame into the uncharted territories of the future.</p>
                 </article>
-
                 <article class="card glass-panel">
-                    <figure>
-                        <img src="LyranOblivion.jpeg" alt="Oblivion, the faceless void" class="char-img-fixed oblivion-style">
-                        <figcaption>
-                            <h3>Oblivion</h3>
-                            <p>The Faceless Void. A force of static silence that feeds on memories.</p>
-                        </figcaption>
-                    </figure>
+                    <div class="char-img oblivion-placeholder" role="img" aria-label="Portrait of Oblivion"></div>
+                    <h3>Oblivion</h3>
+                    <p>The Faceless Void. A force of static silence that feeds on the memories of the world.</p>
                 </article>
+            </div>
+        </section>
+
+        <section id="trailer" class="content-section container" aria-labelledby="trailer-title">
+            <h2 id="trailer-title" class="section-title">First Look</h2>
+            <div class="video-container glass-panel">
+                <div class="video-placeholder flex-center">
+                    <span class="play-icon">▶</span>
+                    <p>TEASER TRAILER ARRIVING 2025</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="creator" class="content-section creator-bg">
+            <div class="container">
+                <h2 class="section-title">The Architect of Draevolith</h2>
+                <div class="creator-card glass-panel card">
+                    <p>Welcome to the Archive. This project was born from a passion for storytelling, mythology, and the belief that even the deepest shadows contain a spark of truth.</p>
+                    <p>As the creator of <strong>Legend of the First Light</strong>, my goal is to build a world where curiosity is the ultimate power.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-btn">Follow the Journey</a>
+                        <a href="mailto:yourname@example.com" class="social-btn">Contact the Studio</a>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
 
     <footer class="site-footer">
         <div class="container">
-            <p>&copy; 2025 Draevolith Studios. Crafted in the First Light.</p>
+            <p>&copy; 2025 Draevolith Studios. All Rights Reserved. | Created for the Legend of the First Light.</p>
         </div>
     </footer>
 
     <script>
-        /**
-         * ANIMATION: Intersection Observer for Scroll Reveals
-         */
-        const revealCallback = (entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                    // Stop observing once triggered to save resources
-                    observer.unobserve(entry.target);
-                }
-            });
-        };
-
-        const revealObserver = new IntersectionObserver(revealCallback, { 
-            threshold: 0.15 
-        });
-
-        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
-
-        /**
-         * INTERACTIVE: High-Performance Lantern Glow
-         */
         const glow = document.getElementById('lantern-glow');
         
-        // Use translate3d for GPU acceleration (smoother 60fps)
-        const updateLantern = (e) => {
-            const x = e.clientX - 250;
-            const y = e.clientY - 250;
-            
-            window.requestAnimationFrame(() => {
-                glow.style.transform = `translate3d(${x}px, ${y}px, 0)`;
-            });
-        };
-
-        // Only run on non-touch devices for better mobile experience
+        // Only track mouse on devices that have a pointer
         if (window.matchMedia("(pointer: fine)").matches) {
-            document.addEventListener('mousemove', updateLantern);
+            document.addEventListener('mousemove', (e) => {
+                window.requestAnimationFrame(() => {
+                    glow.style.transform = `translate(${e.clientX - 200}px, ${e.clientY - 200}px)`;
+                });
+            });
+        } else {
+            // Hide glow on mobile/touch devices
+            glow.style.display = 'none';
         }
     </script>
+
 </body>
 </html>
