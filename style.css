@@ -1,7 +1,7 @@
 /* 3. NAVIGATION & LOGO HEADER */
 header {
     background: rgba(10, 11, 30, 0.95);
-    padding: 12px 0; /* Slightly reduced padding for a sleeker bar */
+    padding: 10px 0; /* Tightened padding for a more professional height */
     position: fixed;
     width: 100%;
     z-index: 1000;
@@ -12,24 +12,28 @@ header {
 .nav-flex { 
     display: flex; 
     justify-content: space-between; 
-    align-items: center; 
+    align-items: center;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 /* Logo container for perfect alignment */
 .logo-container {
     display: flex;
     align-items: center;
-    gap: 10px;
-    text-decoration: none; /* In case you make it a link later */
+    gap: 12px; /* Balanced space between 'D' and DRAEVOLITH */
+    text-decoration: none;
+    cursor: default; /* Change to pointer if you add a link later */
 }
 
-/* FIXED: Smaller Logo Size */
+/* FIXED: Refined Small Logo Size */
 .nav-icon {
-    height: 30px; /* Reduced from 40px to 30px for a subtle look */
+    height: 28px; /* Specifically sized to align with 1.2rem font cap-height */
     width: auto;
+    object-fit: contain;
     filter: drop-shadow(0 0 5px var(--gold-glow));
     transition: var(--transition);
-    object-fit: contain;
 }
 
 .nav-icon:hover {
@@ -41,8 +45,30 @@ header {
 .logo-text {
     font-family: 'Cinzel', serif;
     color: var(--gold);
-    font-size: 1.2rem; /* Reduced from 1.4rem to match the 30px icon */
-    font-weight: bold;
+    font-size: 1.2rem;
+    font-weight: 700;
     letter-spacing: 2px;
-    line-height: 1;
+    line-height: 1; /* Essential for vertical centering with the icon */
+    text-transform: uppercase;
+}
+
+/* Navigation Link Styling */
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--starlight);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--gold);
+    text-shadow: 0 0 8px var(--gold-glow);
 }
