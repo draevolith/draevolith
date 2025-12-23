@@ -7,10 +7,14 @@
     
     <meta name="description" content="Official Archive for Draevolith, the primordial Greek God of the First Light. Explore the myth of the Guardian of Knowledge born of Night and Light.">
     <meta name="keywords" content="Draevolith, Greek God, First Light, Mythology, Lyra, Oblivion, Protogenos">
+    
     <meta property="og:title" content="Draevolith | Legend of the First Light">
     <meta property="og:description" content="Explore the myth of the primordial deity born of Nyx and Aether.">
+    <meta property="og:image" content="image_0c79af.jpg">
+    <link rel="me" href="https://www.urbandictionary.com/define.php?term=Draevolith">
     
     <link rel="stylesheet" href="style.css">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Fauna+One&display=swap" rel="stylesheet">
@@ -25,7 +29,6 @@
             <ul class="nav-links">
                 <li><a href="#myth">The Myth</a></li>
                 <li><a href="#legend">The Legend</a></li>
-                <li><a href="#symbols">Symbols</a></li>
                 <li><a href="#characters">Characters</a></li>
                 <li><a href="#trailer">Trailer</a></li>
                 <li><a href="#creator">The Architect</a></li>
@@ -42,12 +45,14 @@
             </div>
         </section>
 
-        <section id="myth" class="content-section container" aria-labelledby="myth-title">
-            <h2 id="myth-title" class="section-title">The Primordial Paradox</h2>
-            <p class="description">
-                Born of <strong>Nyx (Night)</strong> and <strong>Aether (Light)</strong>, Draevolith is the primordial Greek God (Protogenos) of the First Light. 
-                He is the bridge between the unknown and the understood—the deity of the first spark of creation.
-            </p>
+        <section id="myth" class="content-section container">
+            <h2 class="section-title">The Primordial Paradox</h2>
+            <div class="glass-panel description-box">
+                <p>
+                    Born of <strong>Nyx (Night)</strong> and <strong>Aether (Light)</strong>, Draevolith is the primordial Greek God (Protogenos) of the First Light. 
+                    He is the bridge between the unknown and the understood—the deity of the first spark of creation.
+                </p>
+            </div>
         </section>
 
         <section id="legend" class="content-section alternate-bg">
@@ -58,7 +63,7 @@
                 </article>
                 
                 <div class="center-icon flex-center">
-                    <img src="image_0c79af.jpg" class="origin-orb" alt="A cosmic scene of Lyra and the Faceless Void" loading="lazy">
+                    <img src="image_0c79af.jpg" class="origin-orb" alt="A cosmic scene representing the birth of Draevolith" loading="lazy">
                 </div>
                 
                 <article class="side light glass-panel card">
@@ -68,8 +73,8 @@
             </div>
         </section>
 
-        <section id="characters" class="content-section container" aria-labelledby="char-title">
-            <h2 id="char-title" class="section-title">The Seekers & The Lost</h2>
+        <section id="characters" class="content-section container">
+            <h2 class="section-title">The Seekers & The Lost</h2>
             <div class="grid-layout">
                 <article class="card glass-panel">
                     <img src="image_0c79af.jpg" alt="Portrait of Lyra the Apprentice Mapmaker" class="char-img-fixed">
@@ -78,14 +83,35 @@
                 </article>
                 
                 <article class="card glass-panel">
-                    <img src="image_0c79af.jpg" alt="Portrait of Oblivion the Faceless Void" class="char-img-fixed" style="filter: grayscale(0.5) brightness(0.8);">
+                    <img src="image_0c79af.jpg" alt="Portrait of Oblivion the Faceless Void" class="char-img-fixed oblivion-style">
                     <h3>Oblivion</h3>
                     <p>The Faceless Void. A force of static silence that feeds on the memories of the world.</p>
                 </article>
             </div>
         </section>
 
-        </main>
+        <section id="trailer" class="content-section container">
+            <h2 class="section-title">First Look</h2>
+            <div class="video-container glass-panel">
+                <div class="video-placeholder flex-center">
+                    <span class="play-icon">▶</span>
+                    <p>TEASER TRAILER ARRIVING 2025</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="creator" class="content-section creator-bg">
+            <div class="container">
+                <h2 class="section-title">The Architect</h2>
+                <div class="creator-card glass-panel card">
+                    <p>Welcome to the Archive. This project explores the belief that even the deepest shadows contain a spark of truth.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-btn">Follow the Journey</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <footer class="site-footer">
         <div class="container">
@@ -98,7 +124,8 @@
         if (window.matchMedia("(pointer: fine)").matches) {
             document.addEventListener('mousemove', (e) => {
                 window.requestAnimationFrame(() => {
-                    glow.style.transform = `translate(${e.clientX - 200}px, ${e.clientY - 200}px)`;
+                    glow.style.left = `${e.clientX}px`;
+                    glow.style.top = `${e.clientY}px`;
                 });
             });
         } else {
