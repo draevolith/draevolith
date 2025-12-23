@@ -7,13 +7,6 @@
     
     <link rel="icon" type="image/png" href="logo.png">
     
-    <meta name="description" content="Official Archive for Draevolith, the primordial Greek God of the First Light. Guardian of Knowledge born of Night and Light.">
-    <meta name="keywords" content="Draevolith, Greek God, First Light, Mythology, Lyra, Oblivion, Protogenos">
-    
-    <link rel="me" href="https://www.urbandictionary.com/define.php?term=Draevolith">
-    <meta property="og:title" content="Draevolith | Legend of the First Light">
-    <meta property="og:image" content="LyranOblivion.jpeg">
-    
     <link rel="stylesheet" href="style.css">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,9 +18,9 @@
     <div id="lantern-glow" aria-hidden="true"></div>
 
     <header class="site-header">
-        <nav class="container nav-flex" aria-label="Main Navigation">
+        <nav class="container nav-flex">
             <div class="logo-container">
-                <img src="logo.png" alt="Draevolith Logo" class="nav-icon">
+                <img src="logo.png" alt="D" class="nav-icon">
                 <span class="logo-text">DRAEVOLITH</span>
             </div>
 
@@ -35,7 +28,6 @@
                 <li><a href="#myth">The Myth</a></li>
                 <li><a href="#legend">The Legend</a></li>
                 <li><a href="#characters">Characters</a></li>
-                <li><a href="#creator">The Architect</a></li>
             </ul>
         </nav>
     </header>
@@ -49,41 +41,41 @@
             </div>
         </section>
 
-        <section id="myth" class="content-section container">
+        <section id="myth" class="content-section container reveal">
             <h2 class="section-title">The Primordial Paradox</h2>
             <div class="glass-panel">
                 <p>Born of <strong>Nyx (Night)</strong> and <strong>Aether (Light)</strong>, Draevolith is the primordial Greek God of the First Light. He is the bridge between the unknown and the understood.</p>
             </div>
         </section>
 
-        <section id="legend" class="content-section alternate-bg">
+        <section id="legend" class="content-section alternate-bg reveal">
             <div class="container split-container">
                 <article class="side glass-panel card">
                     <h3>Born of Nyx</h3>
                     <p>From the eternal silence, he inherited the power to see what is hidden in the deep.</p>
                 </article>
                 <div class="center-icon flex-center">
-                    <img src="LyranOblivion.jpeg" class="origin-orb" alt="The cosmic birth of the First Light" loading="lazy">
+                    <img src="LyranOblivion.jpeg" class="origin-orb" alt="The cosmic birth">
                 </div>
                 <article class="side glass-panel card">
                     <h3>Gift of Aether</h3>
-                    <p>From the searing radiance, he was given the spark to ignite the curiosity of all mankind.</p>
+                    <p>From the searing radiance, he was given the spark to ignite curiosity.</p>
                 </article>
             </div>
         </section>
 
-        <section id="characters" class="content-section container">
+        <section id="characters" class="content-section container reveal">
             <h2 class="section-title">The Seekers & The Lost</h2>
             <div class="grid-layout">
                 <article class="card glass-panel">
-                    <img src="LyranOblivion.jpeg" alt="Lyra the Apprentice Mapmaker" class="char-img-fixed">
+                    <img src="LyranOblivion.jpeg" alt="Lyra" class="char-img-fixed">
                     <h3>Lyra</h3>
-                    <p>The Apprentice Mapmaker. Chosen to carry the Flame into the future.</p>
+                    <p>The Apprentice Mapmaker. Chosen to carry the Flame.</p>
                 </article>
                 <article class="card glass-panel">
-                    <img src="LyranOblivion.jpeg" alt="Oblivion the Faceless Void" class="char-img-fixed oblivion-style">
+                    <img src="LyranOblivion.jpeg" alt="Oblivion" class="char-img-fixed oblivion-style">
                     <h3>Oblivion</h3>
-                    <p>The Faceless Void. A force of static silence that feeds on memories.</p>
+                    <p>The Faceless Void. A force of static silence.</p>
                 </article>
             </div>
         </section>
@@ -96,6 +88,18 @@
     </footer>
 
     <script>
+        // FADE-IN ON SCROLL LOGIC
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+
+        // MOUSE GLOW LOGIC
         const glow = document.getElementById('lantern-glow');
         document.addEventListener('mousemove', (e) => {
             window.requestAnimationFrame(() => {
