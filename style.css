@@ -1,35 +1,36 @@
 /* 3. NAVIGATION & LOGO HEADER */
 header {
-    background: rgba(10, 11, 30, 0.95);
-    padding: 10px 0; /* Tightened padding for a more professional height */
     position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
     z-index: 1000;
-    border-bottom: 1px solid var(--glass-border);
+    padding: 10px 0;
+    background: rgba(10, 11, 30, 0.95);
     backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--glass-border);
 }
 
-.nav-flex { 
-    display: flex; 
-    justify-content: space-between; 
+.nav-flex {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    width: 90%;
     max-width: 1200px;
+    width: 90%;
     margin: 0 auto;
 }
 
-/* Logo container for perfect alignment */
+/* Logo & Branding */
 .logo-container {
     display: flex;
     align-items: center;
-    gap: 12px; /* Balanced space between 'D' and DRAEVOLITH */
+    gap: 12px;
     text-decoration: none;
-    cursor: default; /* Change to pointer if you add a link later */
+    cursor: default;
 }
 
-/* FIXED: Refined Small Logo Size */
 .nav-icon {
-    height: 28px; /* Specifically sized to align with 1.2rem font cap-height */
+    height: 28px;
     width: auto;
     object-fit: contain;
     filter: drop-shadow(0 0 5px var(--gold-glow));
@@ -41,28 +42,28 @@ header {
     filter: drop-shadow(0 0 10px var(--gold));
 }
 
-/* Adjusted text to match the smaller icon */
 .logo-text {
     font-family: 'Cinzel', serif;
-    color: var(--gold);
     font-size: 1.2rem;
     font-weight: 700;
+    color: var(--gold);
     letter-spacing: 2px;
-    line-height: 1; /* Essential for vertical centering with the icon */
+    line-height: 1;
     text-transform: uppercase;
 }
 
-/* Navigation Link Styling */
+/* Navigation Links */
 .nav-links {
     display: flex;
-    list-style: none;
+    align-items: center;
     gap: 25px;
+    list-style: none;
 }
 
 .nav-links a {
-    text-decoration: none;
-    color: var(--starlight);
     font-size: 0.85rem;
+    color: var(--starlight);
+    text-decoration: none;
     text-transform: uppercase;
     letter-spacing: 1px;
     transition: 0.3s ease;
