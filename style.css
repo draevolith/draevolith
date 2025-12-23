@@ -131,11 +131,13 @@ nav { display: flex; justify-content: space-between; align-items: center; }
 .symbol-icon { font-size: 3.5rem; margin-bottom: 1.5rem; display: block; }
 
 .char-img {
-    height: 400px;
+    width: 100%;
+    height: auto;           /* Let aspect ratio handle it */
+    aspect-ratio: 3 / 4;    /* Keeps a consistent portrait shape */
     border-radius: 4px;
-    margin-bottom: 20px;
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
 }
 
 /* 8. BUTTONS */
@@ -175,3 +177,4 @@ footer {
 @media (max-width: 600px) {
     .nav-links { display: none; } /* Consider adding a burger menu here later */
 }
+
