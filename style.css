@@ -1,36 +1,7 @@
-/* 1. CONFIGURATION */
-:root {
-    --gold: #d4af37;
-    --gold-glow: rgba(212, 175, 55, 0.4);
-    --night: #0a0b1e;
-    --starlight: #e0e0ff;
-    --glass: rgba(255, 255, 255, 0.03);
-    --glass-border: rgba(212, 175, 55, 0.2);
-    --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-}
-
-/* 2. BASE STYLES */
-* { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body {
-    background-color: var(--night);
-    color: var(--starlight);
-    font-family: 'Fauna One', serif;
-    line-height: 1.6;
-    overflow-x: hidden;
-}
-
-h1, h2, h3 {
-    font-family: 'Cinzel', serif;
-    color: var(--gold);
-    letter-spacing: 2px;
-    text-transform: uppercase;
-}
-
 /* 3. NAVIGATION & LOGO HEADER */
 header {
     background: rgba(10, 11, 30, 0.95);
-    padding: 15px 0;
+    padding: 12px 0; /* Slightly reduced padding for a sleeker bar */
     position: fixed;
     width: 100%;
     z-index: 1000;
@@ -44,150 +15,34 @@ header {
     align-items: center; 
 }
 
-/* New: Logo icon and text alignment */
+/* Logo container for perfect alignment */
 .logo-container {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
+    text-decoration: none; /* In case you make it a link later */
 }
 
+/* FIXED: Smaller Logo Size */
 .nav-icon {
-    height: 40px; /* Aligns with text height */
+    height: 30px; /* Reduced from 40px to 30px for a subtle look */
     width: auto;
-    filter: drop-shadow(0 0 8px var(--gold-glow));
+    filter: drop-shadow(0 0 5px var(--gold-glow));
     transition: var(--transition);
+    object-fit: contain;
 }
 
 .nav-icon:hover {
-    transform: scale(1.1) rotate(5deg);
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 10px var(--gold));
 }
 
+/* Adjusted text to match the smaller icon */
 .logo-text {
     font-family: 'Cinzel', serif;
     color: var(--gold);
-    font-size: 1.4rem;
+    font-size: 1.2rem; /* Reduced from 1.4rem to match the 30px icon */
     font-weight: bold;
-    letter-spacing: 3px;
-}
-
-.nav-links { display: flex; list-style: none; }
-.nav-links li { margin-left: 25px; }
-.nav-links a {
-    text-decoration: none;
-    color: var(--starlight);
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: 0.3s;
-}
-.nav-links a:hover { color: var(--gold); text-shadow: 0 0 10px var(--gold); }
-
-/* 4. LAYOUT & GLASS PANELS */
-.container { width: 90%; max-width: 1200px; margin: 0 auto; }
-.flex-center { display: flex; align-items: center; justify-content: center; }
-
-.glass-panel {
-    background: var(--glass);
-    border: 1px solid var(--glass-border);
-    backdrop-filter: blur(8px);
-    transition: var(--transition);
-    border-radius: 12px;
-    padding: 30px;
-}
-
-.glass-panel:hover {
-    background: rgba(255, 255, 255, 0.05);
-    border-color: var(--gold);
-    transform: translateY(-5px);
-}
-
-/* 5. CHARACTER IMAGES & OBLIVION EFFECT */
-.char-img-fixed {
-    width: 100%;
-    height: 350px;
-    object-fit: cover;
-    object-position: center;
-    border-radius: 8px;
-    margin-bottom: 20px;
-    border-bottom: 2px solid var(--gold-glow);
-    display: block;
-}
-
-/* Oblivion's specific "Shadow" style */
-.oblivion-style {
-    filter: grayscale(1) brightness(0.5) contrast(1.2);
-    box-shadow: inset 0 0 50px #000;
-    transition: var(--transition);
-}
-
-.oblivion-style:hover {
-    filter: grayscale(0.5) brightness(0.7);
-}
-
-/* 6. INTERACTIVE LANTERN GLOW */
-#lantern-glow {
-    width: 500px;
-    height: 500px;
-    background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
-    position: fixed;
-    top: 0;
-    left: 0;
-    pointer-events: none;
-    z-index: 9999;
-    will-change: transform;
-}
-
-/* 7. HERO & CONTENT SECTIONS */
-.hero {
-    height: 100vh;
-    /* Updated to match your actual background image filename */
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('LyranOblivion.jpeg');
-    background-size: cover;
-    background-position: center;
-    text-align: center;
-}
-
-.content-section { padding: 100px 0; text-align: center; }
-.section-title { font-size: 2.5rem; margin-bottom: 3rem; }
-
-.grid-layout {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 40px;
-}
-
-/* 8. ORIGIN ORB (Center Image) */
-.origin-orb {
-    width: 250px;
-    height: 250px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 3px solid var(--gold);
-    box-shadow: 0 0 30px var(--gold-glow);
-    animation: pulse 4s infinite ease-in-out;
-}
-
-@keyframes pulse {
-    0% { transform: scale(1); box-shadow: 0 0 20px var(--gold-glow); }
-    50% { transform: scale(1.05); box-shadow: 0 0 40px var(--gold); }
-    100% { transform: scale(1); box-shadow: 0 0 20px var(--gold-glow); }
-}
-
-/* 9. BUTTONS */
-.btn {
-    display: inline-block;
-    padding: 12px 35px;
-    border: 1px solid var(--gold);
-    color: var(--gold);
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 0.85rem;
     letter-spacing: 2px;
-    transition: var(--transition);
-}
-
-.btn:hover {
-    background: var(--gold);
-    color: var(--night);
-    box-shadow: 0 0 30px var(--gold-glow);
+    line-height: 1;
 }
